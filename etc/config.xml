@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Ilmakiage_Coupon>
+            <version>0.1.0</version>
+        </Ilmakiage_Coupon>
+    </modules>
+    <global>
+        <models>
+            <ilmakiage_coupon>
+                <class>Ilmakiage_Coupon_Model</class>
+            </ilmakiage_coupon>
+        </models>
+        <events>
+            <sales_quote_collect_totals_before>
+                <observers>
+                    <ilmakiage_coupon>
+                        <class>ilmakiage_coupon/observer</class>
+                        <method>applyCoupon</method>
+                    </ilmakiage_coupon>
+                </observers>
+            </sales_quote_collect_totals_before>
+        </events>
+    </global>
+</config>
